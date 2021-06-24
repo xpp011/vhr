@@ -28,6 +28,8 @@
 扩展`UsernamePasswordAuthenticationFilter`加入JSON登录遇到的问题
 
 在未接入前后端分离时，如果需要JSON登录的话，我们只需要扩展`UsernamePasswordAuthenticationFilter`的`attemptAuthentication`方法,像这样
+
+
 ![image-20210615003141425](https://user-images.githubusercontent.com/72737308/123312637-31d95900-d55b-11eb-8e3a-c116bc20d7eb.png)
 
 
@@ -103,8 +105,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 并设置DEFAULT_ANT_PATH_REQUEST_MATCHER为`/doLogin`
 
-![image-20210615005308404](D:\win10桌面存放\项目\MyVhr\微人事项目笔记.assets\image-20210615005308404.png)
-
+![image-20210615005308404](https://user-images.githubusercontent.com/72737308/123312771-5af9e980-d55b-11eb-8640-b2f3e215adb7.png)
 ```java
 //修改Security支持Json登录
 //该配置类无需通过@Configuration给Spring托管 通过@Bean托管  还需要配置授权管理setAuthenticationManager方法
@@ -255,13 +256,13 @@ public class SecurityJsonLoginConfig extends AbstractAuthenticationProcessingFil
 
 由于我们登录成功处理器和登录失败处理器需要设置两个地方
 
-一个是formLogin方法<img src="D:\win10桌面存放\项目\MyVhr\微人事项目笔记.assets\image-20210615005531170.png" alt="image-20210615005531170" style="zoom:50%;" />
+一个是formLogin方法![image-20210615005531170](https://user-images.githubusercontent.com/72737308/123312841-6fd67d00-d55b-11eb-924b-8bb76dc86416.png)
 
 
 
 
 
-还有一个是自定义类设置处理器<img src="D:\win10桌面存放\项目\MyVhr\微人事项目笔记.assets\image-20210615005724745.png" alt="image-20210615005724745" style="zoom:33%;" />
+还有一个是自定义类设置处理器![image-20210615005724745](https://user-images.githubusercontent.com/72737308/123312867-77962180-d55b-11eb-8097-317ef4de319e.png)
 
 
 
@@ -719,11 +720,9 @@ public class POIUtil {
 
 通过TemplateEngine 和Context 的配合，我们可以使用thymeleaf模版来生产html文件。
 
-![image-20210623002239931](D:\win10桌面存放\项目\MyVhr\微人事项目笔记.assets\image-20210623002239931.png)
+![image-20210623002239931](https://user-images.githubusercontent.com/72737308/123312981-91cfff80-d55b-11eb-892b-53fb2afd81fa.png)
 
-
-
-![image-20210623002308946](D:\win10桌面存放\项目\MyVhr\微人事项目笔记.assets\image-20210623002308946.png)
+![image-20210623002308946](https://user-images.githubusercontent.com/72737308/123313002-998fa400-d55b-11eb-9527-d7bf3d0c1e0c.png)
 
 **Context是给thymeleaf模版提供变量的**。
 
@@ -810,7 +809,7 @@ public class WebSocketController {
 
 **导入两个WebSocket的js** 
 
-![image-20210624181435448](D:\win10桌面存放\项目\MyVhr\微人事项目笔记.assets\image-20210624181435448.png)
+![image-20210624181435448](https://user-images.githubusercontent.com/72737308/123313023-a0b6b200-d55b-11eb-9de4-48cd83c030aa.png)
 
 如果项目报错还需要安装`sockjs-client`
 
@@ -821,20 +820,16 @@ public class WebSocketController {
 **设置转发代理**
 
 在vue.config.js文件中设置ws协议，对于前缀为/ws路径的都代理到localhost:8081端口去
-
-![image-20210624181650658](D:\win10桌面存放\项目\MyVhr\微人事项目笔记.assets\image-20210624181650658.png)
-
-
+![image-20210624181650658](https://user-images.githubusercontent.com/72737308/123313040-a57b6600-d55b-11eb-9648-42272b28ef64.png)
 
 
 
 **建立连接**
 
 导入接口
+![image-20210624181925380](https://user-images.githubusercontent.com/72737308/123313054-aad8b080-d55b-11eb-8826-3c927c69a5b1.png)
 
-![image-20210624181925380](D:\win10桌面存放\项目\MyVhr\微人事项目笔记.assets\image-20210624181925380.png)
-
-![image-20210624181939798](D:\win10桌面存放\项目\MyVhr\微人事项目笔记.assets\image-20210624181939798.png)
+![Uploading image-20210624181939798.png…]()
 
 
 
@@ -843,5 +838,4 @@ public class WebSocketController {
 
 
 **发送消息**
-
-![image-20210624182018822](D:\win10桌面存放\项目\MyVhr\微人事项目笔记.assets\image-20210624182018822.png)
+![image-20210624182018822](https://user-images.githubusercontent.com/72737308/123313100-bb892680-d55b-11eb-88e1-4ba35d56b90a.png)
