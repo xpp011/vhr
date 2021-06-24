@@ -28,9 +28,7 @@
 扩展`UsernamePasswordAuthenticationFilter`加入JSON登录遇到的问题
 
 在未接入前后端分离时，如果需要JSON登录的话，我们只需要扩展`UsernamePasswordAuthenticationFilter`的`attemptAuthentication`方法,像这样
-
-<img src="D:\win10桌面存放\项目\MyVhr\微人事项目笔记.assets\image-20210615003141425.png" alt="image-20210615003141425" style="zoom:50%;" />
-
+![image-20210615003141425](https://user-images.githubusercontent.com/72737308/123312637-31d95900-d55b-11eb-8e3a-c116bc20d7eb.png)
 
 
 在`attemptAuthentication`方法中判断了当前请求头是否为JSON数据，如果是，我们则通过io流的方式读取JSON数据，并映射成Map类型。
