@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.xpp011.vhr.mapper.RoleMapper">
+    <select id="getAllRoles" resultType="role">
+        select * from `role`
+    </select>
+
+    <insert id="insertRole" parameterType="role">
+        insert into `role` value (null ,#{name},#{nameZh})
+    </insert>
+
+    <delete id="deleteRoleById" parameterType="int">
+        delete from `role` where id=#{rid}
+    </delete>
+</mapper>

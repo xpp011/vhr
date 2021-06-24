@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.xpp011.vhr.mapper.MenuRoleMapper">
+    <select id="getMidsByRid" resultType="int">
+        select mid from menu_role where rid=#{rid}
+    </select>
+
+    <delete id="deleteMidsByRid" parameterType="int">
+        delete from menu_role where rid=#{rid}
+    </delete>
+
+    <insert id="insertMidsByRid" >
+        insert into menu_role values
+        <foreach collection="mids" item="mid" separator=",">
+            (null ,#{mid},#{rid})
+        </foreach>
+    </insert>
+</mapper>

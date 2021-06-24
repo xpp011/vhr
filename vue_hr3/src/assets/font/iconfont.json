@@ -1,0 +1,51 @@
+{
+  "id": "2612935",
+  "name": "vhr",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "357438",
+      "name": "管理",
+      "font_class": "management",
+      "unicode": "e664",
+      "unicode_decimal": 58980
+    },
+    {
+      "icon_id": "4293108",
+      "name": "资料",
+      "font_class": "ziliao",
+      "unicode": "e76f",
+      "unicode_decimal": 59247
+    },
+    {
+      "icon_id": "6446348",
+      "name": "管理",
+      "font_class": "tianchongxing-",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "6510092",
+      "name": "系统",
+      "font_class": "xitong",
+      "unicode": "e835",
+      "unicode_decimal": 59445
+    },
+    {
+      "icon_id": "10622812",
+      "name": "统计",
+      "font_class": "icon_function_tongji",
+      "unicode": "e8ac",
+      "unicode_decimal": 59564
+    },
+    {
+      "icon_id": "17619130",
+      "name": "薪资管理",
+      "font_class": "tubiaozhizuomoban-17",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>入职欢迎邮件</title>
+</head>
+<body>
+
+欢迎 <span th:text="${name}"></span>加入达摩院这个大家庭,让我们共同努力创造一个美好世界,您的入职信息如下,确认无问题后请在指定时间报道
+<table border="1">
+    <tr>
+        <td>姓名:</td>
+        <td th:text="${name}"></td>
+    </tr>
+    <tr>
+        <td>职位:</td>
+        <td th:text="${positionName}"></td>
+    </tr>
+    <tr>
+        <td>职称:</td>
+        <td th:text="${jobLevelName}"></td>
+    </tr>
+    <tr>
+        <td>部门:</td>
+        <td th:text="${departmentName}"></td>
+    </tr>
+</table>
+
+
+</body>
+</html>

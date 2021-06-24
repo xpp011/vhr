@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.xpp011.vhr.mapper.HrMapper">
+    <select id="loadUserByUsername" resultType="hr">
+        select * from hr where username=#{username}
+    </select>
+
+    <select id="getRolesByHrId" resultType="role">
+        SELECT r.* FROM `hr_role` hrr,`role` r WHERE hrr.hrid=#{id} AND hrr.rid=r.id
+    </select>
+
+
+    <resultMap id="AllHrsMap" type="hr">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="phone" column="phone"/>
+        <result property="telephone" column="telephone"/>
+        <result property="address" column="address"/>
+        <result property="enabled" column="enabled"/>
+        <result property="username" column="username"/>
+        <result property="userface" column="userface"/>
+        <result property="remark" column="remark"/>
+        <collection property="roles" ofType="role">
+            <id property="id" column="rid"></id>
+            <result property="name" column="rname"></result>
+            <result property="nameZh" column="rnameZh"></result>
+        </collection>
+    </resultMap>
+
+    <select id="getAllHrs" resultMap="AllHrsMap">
+        SELECT h.*,r.id rid,r.name rname, r.nameZh rnameZh FROM `hr` h LEFT JOIN `hr_role` hr ON h.id=hr.hrid LEFT JOIN  `role` r ON hr.rid=r.id
+        WHERE h.id!=#{id}
+        <if test="searchHrname!=null">
+            and h.`name` like  concat('%',#{searchHrname},'%')
+        </if>
+    </select>
+
+    <update id="updateHr" parameterType="hr" >
+        UPDATE `hr` SET `NAME`=#{name},username=#{username},`enabled`=#{enabled} WHERE id=#{id}
+    </update>
+
+    <delete id="deleteRolesByHid" parameterType="int">
+        delete from hr_role where hrid=#{hid}
+    </delete>
+
+    <insert id="insertRoles" parameterType="int">
+        insert into hr_role values
+        <foreach collection="rids" separator="," item="rid">
+            (null ,#{hid},#{rid})
+        </foreach>
+    </insert>
+
+    <select id="getAllHrsExceptCurrentHr" parameterType="int" resultType="hr">
+        select * from hr where id!=#{id}
+    </select>
+
+</mapper>
